@@ -1,4 +1,49 @@
 .title() {
-    color: @blue;
     background-color: red;
+}
+.flexHeader() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flexColumn() {
+    display: flex;
+    flex-direction: column;
+}
+.flexRow() {
+    display: flex;
+    flex-direction: row;
+}
+.textConfig(@size, @weight, @family, @color) {
+    font-size: @size;
+    font-weight: @weight;
+    font-family: @family, sans-serif;
+
+    color: @color;
+}
+.titleConfig(@size, @weight, @family, @color, @sizeDesktop) {
+    font-size: @size;
+    font-weight: @weight;
+    font-family: @family, sans-serif;
+
+    color: @color;
+
+    @media (min-width: 769px) {
+        font-size: @sizeDesktop;
+    }
+}
+.buttonConfig(@bg, @color, @radius, @padding, @size, @weight, @family) {
+    background-color: @bg;
+    color: @color;
+
+    border-radius: @radius;
+
+    padding: @padding;
+
+    font-size: @size;
+    font-weight: @weight;
+    font-family: @family, sans-serif;
+}
+.buttonImg() {
+    background-color: transparent;
 }
