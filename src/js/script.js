@@ -1,22 +1,3 @@
-const mudaMenu = () => {
-    // if (
-    //     imagem.src ===
-    //     "https://raw.githubusercontent.com/isgabriel/rachi-lp__frontend/0224147903a47834fd6470629f6543119ec112dd/src/assets/menu-hamburguer.svg"
-    // ) {
-    criaMenu();
-    //     imagem.src =
-    //         "https://raw.githubusercontent.com/isgabriel/rachi-lp__frontend/269621e38d75b7f3327192461a1be385498ea411/src/assets/fechar-menu-icon.svg";
-    //     imagem.className = "some-header-botao";
-    // } else if (
-    //     imagem.src ===
-    //     "https://raw.githubusercontent.com/isgabriel/rachi-lp__frontend/269621e38d75b7f3327192461a1be385498ea411/src/assets/fechar-menu-icon.svg"
-    // ) {
-    //     desmontaMenu();
-    //     imagem.src =
-    //         "https://raw.githubusercontent.com/isgabriel/rachi-lp__frontend/0224147903a47834fd6470629f6543119ec112dd/src/assets/menu-hamburguer.svg";
-    // }
-};
-
 const criaMenu = () => {
     const body = document.querySelector("body");
 
@@ -35,13 +16,13 @@ const criaMenu = () => {
                 <a href="#planos" class="menu-options">Planos</a>
                 <a href="#contato" class="menu-options">Contato</a>
             </nav>
-            <button class="button-logo">
+            <a href="#" class="button-logo">
                 <img
                     src="https://raw.githubusercontent.com/isgabriel/rachi-lp__frontend/269621e38d75b7f3327192461a1be385498ea411/src/assets/logo.svg"
                     alt="logo"
                     aria-label="Logo Rachi" 
                 />
-            </button>
+            </a>
         </div>
     `
     );
@@ -71,4 +52,4 @@ const desmontaMenu = () => {
 };
 
 const imagem = document.getElementById("menu-imagem");
-imagem.addEventListener("click", mudaMenu);
+imagem.addEventListener("click", criaMenu);
