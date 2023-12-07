@@ -32,7 +32,7 @@
             justify-content: space-between;
 
             > a {
-                .textConfig(1.125rem, 500, "Inter", @dark-20);
+                .textConfig(@navbar-links, 500, "Inter", @dark-20);
 
                 &:hover {
                     transition: 0.6s;
@@ -79,7 +79,7 @@
             padding-top: 150px;
 
             > a {
-                .textConfig(1.125rem, 500, "Inter", @dark-10);
+                .textConfig(@navbar-links, 500, "Inter", @dark-10);
 
                 &:hover {
                     transition: 0.6s;
@@ -92,6 +92,121 @@
             position: absolute;
             bottom: 3%;
             right: 10%;
+        }
+    }
+}
+main {
+    .first-section {
+        .paddingConfig();
+
+        .flexColumn();
+        gap: 25px;
+
+        max-width: 100%;
+
+        background-color: @light-blue-bg;
+
+        .div-first-section {
+            .flexColumn();
+            gap: 16px;
+
+            .title {
+                .flexColumn();
+                .titleConfig(@main-title-mobile, 600, "Sora", @dark-10, @main-title-desktop);
+            }
+            .button {
+                max-width: 144px;
+
+                .buttonConfig(
+                        @brand-color,
+                        @dark-40,
+                        @radius-button,
+                        7.5px 27px,
+                        @size-button-mobile,
+                        600,
+                        "Inter",
+                        @size-button-desktop,
+                        16px 36px
+                    );
+            }
+        }
+        .image-first-section {
+            max-width: 550px;
+        }
+    }
+    .second-section {
+        margin-top: 40px;
+        .paddingConfig();
+
+        > h2 {
+            text-align: center;
+
+            .titleConfig(@subtitle-1-mobile, 600, "Sora", @dark-10, @subtitle-1-desktop);
+        }
+        .list-funcionalities {
+            .flexColumn();
+            align-items: center;
+            gap: 24px;
+
+            list-style: none;
+            margin-top: 32px;
+
+            .funcionality-card {
+                .flexColumn();
+                align-items: center;
+                gap: 18px;
+
+                width: 90%;
+                max-width: 300px;
+
+                > img {
+                    width: 60px;
+                }
+                > h3 {
+                    .titleConfig(@subtitle-3-mobile, 600, "Sora", @dark-10, @subtitle-3-desktop);
+                }
+                > p {
+                    .textConfig(@text-1-mobile, 400, "Inter", @dark-20);
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        .first-section {
+            .flexRow();
+            align-items: center;
+            justify-content: space-between;
+
+            .div-first-section {
+                gap: 50px;
+
+                .button {
+                    max-width: 200px;
+                }
+            }
+            .image-first-section {
+                max-width: 450px;
+            }
+        }
+        .second-section {
+            margin-top: 56px;
+
+            .list-funcionalities {
+                .flexRow();
+                justify-content: center;
+                gap: 5%;
+
+                margin-top: 80px;
+            }
+        }
+    }
+    @media (min-width: 1100px) {
+        .first-section {
+            .image-first-section {
+                max-width: 500px;
+            }
         }
     }
 }
