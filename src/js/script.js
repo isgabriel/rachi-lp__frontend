@@ -36,7 +36,6 @@ const criaMenu = () => {
     const opcoesMenu = document.querySelectorAll(".menu-options");
     opcoesMenu.forEach((opcao) => {
         opcao.addEventListener("click", () => {
-            // setTimeout(desmontaMenu, 100);
             desmontaMenu();
         });
     });

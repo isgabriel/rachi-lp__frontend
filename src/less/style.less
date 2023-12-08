@@ -2,10 +2,38 @@
     scroll-behavior: smooth;
 }
 .header {
-    .paddingConfig();
     .flexHeader();
 
+    position: fixed;
+    top: 0;
+
+    width: 100vw;
+
+    padding: 32px 0;
+
     background-color: @dark-40;
+
+    > a {
+        padding-left: 24px;
+
+        @media (min-width: 768px) {
+            padding-left: 50px;
+        }
+        @media (min-width: 1100px) {
+            padding-left: 130px;
+        }
+    }
+    .menu-button,
+    .navbar {
+        padding-right: 24px;
+
+        @media (min-width: 768px) {
+            padding-right: 50px;
+        }
+        @media (min-width: 1100px) {
+            padding-right: 130px;
+        }
+    }
 
     .menu-button {
         .buttonImg();
@@ -17,13 +45,7 @@
         display: none;
     }
 
-    // .navbar {
-    //     display: none;
-    // }
-
     @media (min-width: 768px) {
-        .paddingConfig();
-
         .menu-button {
             display: none;
         }
@@ -37,8 +59,6 @@
 
                 &:hover {
                     .hoverConfig(@dark-10, transparent, none);
-                    // transition: 0.6s;
-                    // color: @dark-10;
                 }
             }
         }
@@ -448,7 +468,9 @@ main {
                     width: 40%;
                 }
                 .special-card {
-                    margin-bottom: 50px;
+                    .card-button {
+                        margin-bottom: 50px;
+                    }
                 }
             }
         }
