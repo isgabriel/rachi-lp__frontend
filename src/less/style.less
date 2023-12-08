@@ -97,14 +97,7 @@
 }
 main {
     .first-section {
-        .paddingConfig();
-
-        .flexColumn();
-        gap: 25px;
-
-        max-width: 100%;
-
-        background-color: @light-blue-bg;
+        .blueSectionConfig();
 
         .div-first-section {
             .flexColumn();
@@ -112,7 +105,7 @@ main {
 
             .title {
                 .flexColumn();
-                .titleConfig(@main-title-mobile, 600, "Sora", @dark-10, @main-title-desktop);
+                .textConfigWithSizes(@main-title-mobile, 600, "Sora", @dark-10, @main-title-desktop);
             }
             .button {
                 max-width: 144px;
@@ -131,24 +124,19 @@ main {
             }
         }
         .image-first-section {
-            max-width: 550px;
+            width: 100%;
         }
     }
     .second-section {
-        margin-top: 40px;
         .paddingConfig();
 
-        > h2 {
-            text-align: center;
-
-            .titleConfig(@subtitle-1-mobile, 600, "Sora", @dark-10, @subtitle-1-desktop);
-        }
         .list-funcionalities {
             .flexColumn();
             align-items: center;
             gap: 24px;
 
             list-style: none;
+
             margin-top: 32px;
 
             .funcionality-card {
@@ -163,13 +151,46 @@ main {
                     width: 60px;
                 }
                 > h3 {
-                    .titleConfig(@subtitle-3-mobile, 600, "Sora", @dark-10, @subtitle-3-desktop);
+                    .textConfigWithSizes(@subtitle-3-mobile, 600, "Sora", @dark-10, @subtitle-3-desktop);
                 }
                 > p {
                     .textConfig(@text-1-mobile, 400, "Inter", @dark-20);
                     text-align: center;
                 }
             }
+        }
+    }
+    .third-section {
+        .paddingConfig();
+        padding-top: 32px;
+
+        .div-content-third-section {
+            .flexColumn();
+            gap: 24px;
+
+            > p {
+                .textConfigWithSizes(@text-2-mobile, 400, "Inter", @dark-20, @text-3-desktop);
+            }
+
+            .buttons-div {
+                .flexRow();
+                justify-content: space-between;
+
+                width: 100%;
+                max-width: 360px;
+
+                .button-store {
+                    .buttonImg();
+
+                    > img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        > img {
+            display: none;
         }
     }
 
@@ -182,6 +203,10 @@ main {
             .div-first-section {
                 gap: 50px;
 
+                .title {
+                    padding: 0;
+                }
+
                 .button {
                     max-width: 200px;
                 }
@@ -191,8 +216,6 @@ main {
             }
         }
         .second-section {
-            margin-top: 56px;
-
             .list-funcionalities {
                 .flexRow();
                 justify-content: center;
@@ -201,12 +224,41 @@ main {
                 margin-top: 80px;
             }
         }
-    }
-    @media (min-width: 1100px) {
-        .first-section {
-            .image-first-section {
-                max-width: 500px;
+        .third-section {
+            .blueSectionConfig();
+
+            .div-content-third-section {
+                align-items: flex-start;
+
+                .subtitles {
+                    text-align: left;
+                }
+
+                > p {
+                    max-width: 450px;
+                }
+
+                .buttons-div {
+                    margin-top: 12px;
+                }
+            }
+
+            > img {
+                display: block;
+                width: 450px;
             }
         }
     }
+}
+.subtitles {
+    .textConfigWithSizes(@subtitle-1-mobile, 600, "Sora", @dark-10, @subtitle-1-desktop);
+
+    text-align: center;
+}
+.blue-section {
+    .paddingConfig();
+
+    max-width: 100%;
+
+    background-color: @light-blue-bg;
 }

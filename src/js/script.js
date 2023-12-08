@@ -34,7 +34,9 @@ const criaMenu = () => {
 
     const opcoesMenu = document.querySelectorAll(".menu-options");
     opcoesMenu.forEach((opcao) => {
-        opcao.addEventListener("click", desmontaMenu);
+        opcao.addEventListener("click", () => {
+            setTimeout(desmontaMenu, 10);
+        });
     });
 
     const logoMenu = document.querySelector(".button-logo");
