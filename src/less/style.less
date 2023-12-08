@@ -318,6 +318,63 @@ main {
             }
         }
     }
+    .fifth-section {
+        .paddingConfig();
+
+        background: url(https://raw.githubusercontent.com/isgabriel/rachi-lp__frontend/b0f5647ba42ed988f94044716212a39e614ec3ff/src/assets/secao-5-img.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .flexColumn();
+        gap: 5px;
+        > h2 {
+            .titlesCenter();
+            color: @dark-40;
+        }
+        > p {
+            .textConfig(@text-2-desktop, 400, "Inter", @dark-30);
+            text-align: center;
+        }
+        > form {
+            .flexColumn();
+            gap: 46px;
+
+            > input {
+                color: @dark-40;
+
+                margin-top: 20px;
+
+                border: none;
+                border-bottom: 1px solid @dark-40;
+
+                background-color: transparent;
+                padding-bottom: 10px;
+
+                &::placeholder {
+                    .textConfig(@text-2-desktop, 500, "Inter", @dark-40);
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            > button {
+                width: 100%;
+
+                background-color: @brand-color;
+                color: @dark-40;
+
+                padding: 8px 0;
+
+                font-size: @text-3-desktop;
+                font-family: "Nunito", sans-serif;
+                font-weight: 700;
+
+                border-radius: 50px;
+                border: none;
+            }
+        }
+    }
 
     @media (min-width: 768px) {
         .first-section {
@@ -394,6 +451,33 @@ main {
                 }
                 .special-card {
                     margin-bottom: 50px;
+                }
+            }
+        }
+        .fifth-section {
+            align-items: center;
+            gap: 16px;
+
+            > p {
+                max-width: 520px;
+            }
+
+            > form {
+                width: 420px;
+
+                margin-top: 74px;
+
+                .flexRow();
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+
+                > input {
+                    width: 60%;
+                }
+
+                > button {
+                    width: 120px;
                 }
             }
         }
