@@ -2,27 +2,28 @@
     scroll-behavior: smooth;
 }
 .header {
-    background-color: @dark-40;
-
-    padding: 24px;
-
+    .paddingConfig();
     .flexHeader();
+
+    background-color: @dark-40;
 
     .menu-button {
         .buttonImg();
 
         display: flex;
     }
-    .some-header-botao {
-        display: none;
-    }
-
+    .some-header-botao,
     .navbar {
         display: none;
     }
 
-    @media (min-width: 769px) {
-        padding: 24px 50px;
+    // .navbar {
+    //     display: none;
+    // }
+
+    @media (min-width: 768px) {
+        .paddingConfig();
+
         .menu-button {
             display: none;
         }
@@ -35,14 +36,12 @@
                 .textConfig(@navbar-links, 500, "Inter", @dark-20);
 
                 &:hover {
-                    transition: 0.6s;
-                    color: @dark-10;
+                    .hoverConfig(@dark-10, transparent, none);
+                    // transition: 0.6s;
+                    // color: @dark-10;
                 }
             }
         }
-    }
-    @media (min-width: 1100px) {
-        padding: 24px 130px;
     }
 }
 .menu {
@@ -59,6 +58,8 @@
         position: relative;
 
         width: 70%;
+        max-width: 300px;
+
         min-height: 100vh;
 
         padding: 0 20px;
@@ -82,8 +83,7 @@
                 .textConfig(@navbar-links, 500, "Inter", @dark-10);
 
                 &:hover {
-                    transition: 0.6s;
-                    color: @dark-20;
+                    .hoverConfig(@dark-20, transparent, none);
                 }
             }
         }
@@ -101,11 +101,11 @@ main {
 
         .div-first-section {
             .flexColumn();
+
             gap: 16px;
 
-            .title {
-                .flexColumn();
-                .textConfigWithSizes(@main-title-mobile, 600, "Sora", @dark-10, @main-title-desktop);
+            .subtitles {
+                .titlesLeft();
             }
             .button {
                 max-width: 144px;
@@ -124,11 +124,14 @@ main {
             }
         }
         .image-first-section {
-            width: 100%;
+            display: none;
         }
     }
     .second-section {
         .paddingConfig();
+        .subtitles {
+            .titlesCenter();
+        }
 
         .list-funcionalities {
             .flexColumn();
@@ -164,6 +167,9 @@ main {
         .paddingConfig();
         padding-top: 32px;
 
+        .subtitles {
+            .titlesLeft();
+        }
         .div-content-third-section {
             .flexColumn();
             gap: 24px;
@@ -175,11 +181,13 @@ main {
             .buttons-div {
                 .flexRow();
                 justify-content: space-between;
+                gap: 12px;
 
                 width: 100%;
                 max-width: 360px;
 
                 .button-store {
+                    padding: 0;
                     .buttonImg();
 
                     > img {
@@ -193,6 +201,123 @@ main {
             display: none;
         }
     }
+    .fourth-section {
+        .paddingConfig();
+
+        .subtitles {
+            .titlesCenter();
+            margin-bottom: 18px;
+        }
+        > p {
+            text-align: center;
+            margin-bottom: 40px;
+
+            .textConfigWithSizes(
+                    @text-2-mobile,
+                    400,
+                    "Inter",
+                    @dark-20,
+                    @text-3-desktop
+                );
+        }
+        .list-plans {
+            .flexColumn();
+            align-items: center;
+            gap: 40px;
+
+            list-style: none;
+
+            .plans-card {
+                .flexColumn();
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+
+                max-width: 360px;
+                height: 470px;
+
+                border-radius: 8px;
+                padding: 24px 5px;
+
+                text-align: center;
+
+                #favorite-plan {
+                    padding: 5px 32px;
+
+                    border-radius: 15px;
+
+                    color: @dark-40;
+                    background-color: @brand-color;
+
+                    font-size: @text-2-mobile;
+                    font-weight: 600;
+                    font-family: "Inter";
+                    letter-spacing: 0.175rem;
+                }
+
+                .value {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 700;
+
+                    display: flex;
+                    flex-direction: row;
+
+                    margin-bottom: 16px;
+
+                    .rs {
+                        padding-top: 10px;
+
+                        font-size: 20px;
+                    }
+
+                    .value-number {
+                        font-size: 50px;
+                    }
+                    .month {
+                        font-size: 26px;
+
+                        display: flex;
+                        align-items: flex-end;
+
+                        padding-bottom: 5px;
+                    }
+                }
+                .card-button {
+                    .buttonConfig(@brand-color,@dark-40,@radius-button, 8px 80px, @size-button-mobile, 700, "Nunito",  @size-button-desktop, 8px 80px);
+                }
+            }
+            .special-card {
+                color: @dark-40;
+                background-color: @dark-10;
+
+                .card-title {
+                    .textConfig(@subtitle-2-mobile, 600, "Sora", @dark-40);
+                }
+
+                .value {
+                    color: @dark-40;
+                }
+
+                .card-description {
+                    .textConfigWithSizes(@subtitle-3-mobile, 400, "Inter", @dark-30, @subtitle-3-desktop);
+                }
+            }
+            .normal-card {
+                background-color: @light-blue-bg;
+                .card-title {
+                    .textConfig(@subtitle-2-mobile, 600, "Sora", @dark-10);
+                }
+                .value {
+                    color: @dark-10;
+                }
+                .card-description {
+                    .textConfigWithSizes(@subtitle-3-mobile, 400, "Inter", @dark-20, @subtitle-3-desktop);
+                }
+                .card-button {
+                }
+            }
+        }
+    }
 
     @media (min-width: 768px) {
         .first-section {
@@ -201,7 +326,7 @@ main {
             justify-content: space-between;
 
             .div-first-section {
-                gap: 50px;
+                width: 45%;
 
                 .title {
                     padding: 0;
@@ -211,7 +336,10 @@ main {
                     max-width: 200px;
                 }
             }
+
             .image-first-section {
+                display: block;
+                width: 45%;
                 max-width: 450px;
             }
         }
@@ -229,6 +357,7 @@ main {
 
             .div-content-third-section {
                 align-items: flex-start;
+                min-width: 50%;
 
                 .subtitles {
                     text-align: left;
@@ -245,15 +374,30 @@ main {
 
             > img {
                 display: block;
-                width: 450px;
+                width: 45%;
+                max-width: 450px;
+            }
+        }
+        .fourth-section {
+            .list-plans {
+                .flexRow();
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+
+                > p {
+                    margin-bottom: 80px;
+                }
+                .plans-card {
+                    min-width: 300px;
+                    width: 40%;
+                }
+                .special-card {
+                    margin-bottom: 50px;
+                }
             }
         }
     }
-}
-.subtitles {
-    .textConfigWithSizes(@subtitle-1-mobile, 600, "Sora", @dark-10, @subtitle-1-desktop);
-
-    text-align: center;
 }
 .blue-section {
     .paddingConfig();

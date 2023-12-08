@@ -10,7 +10,8 @@ const criaMenu = () => {
             <button class="fecha-menu-btn">
                 <img src="https://raw.githubusercontent.com/isgabriel/rachi-lp__frontend/269621e38d75b7f3327192461a1be385498ea411/src/assets/fechar-menu-icon.svg" alt="fecha-menu" class="img-fecha-menu" />
             </button>
-            <nav class="nav-menu">
+            <nav class="nav-menu"
+            >
                 <a href="#funcionalidades" class="menu-options">Funcionalidades</a>
                 <a href="#app" class="menu-options">App</a>
                 <a href="#planos" class="menu-options">Planos</a>
@@ -35,7 +36,8 @@ const criaMenu = () => {
     const opcoesMenu = document.querySelectorAll(".menu-options");
     opcoesMenu.forEach((opcao) => {
         opcao.addEventListener("click", () => {
-            setTimeout(desmontaMenu, 10);
+            // setTimeout(desmontaMenu, 100);
+            desmontaMenu();
         });
     });
 
