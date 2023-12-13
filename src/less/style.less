@@ -1,0 +1,518 @@
+* {
+    scroll-behavior: smooth;
+}
+.header {
+    .flexHeader();
+
+    position: fixed;
+    top: 0;
+
+    width: 100vw;
+
+    padding: 32px 0;
+
+    background-color: @dark-40;
+
+    > a {
+        padding-left: 24px;
+
+        @media (min-width: 768px) {
+            padding-left: 50px;
+        }
+        @media (min-width: 1100px) {
+            padding-left: 130px;
+        }
+    }
+    .menu-button,
+    .navbar {
+        padding-right: 24px;
+
+        @media (min-width: 768px) {
+            padding-right: 50px;
+        }
+        @media (min-width: 1100px) {
+            padding-right: 130px;
+        }
+    }
+
+    .menu-button {
+        .buttonImg();
+
+        display: flex;
+    }
+    .some-header-botao,
+    .navbar {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        .menu-button {
+            display: none;
+        }
+        .navbar {
+            .flexRow();
+            gap: 20px;
+            justify-content: space-between;
+
+            > a {
+                .textConfig(@navbar-links, 500, "Inter", @dark-20);
+
+                &:hover {
+                    .hoverConfig(@dark-10, transparent, none);
+                }
+            }
+        }
+    }
+}
+.menu {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .div-menu {
+        position: relative;
+
+        width: 70%;
+        max-width: 300px;
+
+        min-height: 100vh;
+
+        padding: 0 20px;
+
+        background-color: @brand-light;
+
+        .fecha-menu-btn {
+            .buttonImg();
+
+            position: absolute;
+            top: 10%;
+            right: 10%;
+        }
+        .nav-menu {
+            .flexColumn();
+            gap: 5px;
+
+            padding-top: 150px;
+
+            > a {
+                .textConfig(@navbar-links, 500, "Inter", @dark-10);
+
+                &:hover {
+                    .hoverConfig(@dark-20, transparent, none);
+                }
+            }
+        }
+        .button-logo {
+            .buttonImg();
+            position: absolute;
+            bottom: 3%;
+            right: 10%;
+        }
+    }
+}
+main {
+    .first-section {
+        .blueSectionConfig();
+
+        .div-first-section {
+            .flexColumn();
+
+            gap: 16px;
+
+            .subtitles {
+                .titlesLeft();
+            }
+            .button {
+                max-width: 144px;
+
+                .buttonConfig(
+                        @brand-color,
+                        @dark-40,
+                        @radius-button,
+                        7.5px 27px,
+                        @size-button-mobile,
+                        600,
+                        "Inter",
+                        @size-button-desktop,
+                        16px 36px
+                    );
+            }
+        }
+        .image-first-section {
+            display: none;
+        }
+    }
+    .second-section {
+        .paddingConfig();
+        .subtitles {
+            .titlesCenter();
+        }
+
+        .list-funcionalities {
+            .flexColumn();
+            align-items: center;
+            gap: 24px;
+
+            list-style: none;
+
+            margin-top: 32px;
+
+            .funcionality-card {
+                .flexColumn();
+                align-items: center;
+                gap: 18px;
+
+                width: 90%;
+                max-width: 300px;
+
+                > img {
+                    width: 60px;
+                }
+                > h3 {
+                    .textConfigWithSizes(@subtitle-3-mobile, 600, "Sora", @dark-10, @subtitle-3-desktop);
+                }
+                > p {
+                    .textConfig(@text-1-mobile, 400, "Inter", @dark-20);
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .third-section {
+        .paddingConfig();
+        padding-top: 32px;
+
+        .subtitles {
+            .titlesLeft();
+        }
+        .div-content-third-section {
+            .flexColumn();
+            gap: 24px;
+
+            > p {
+                .textConfigWithSizes(@text-2-mobile, 400, "Inter", @dark-20, @text-3-desktop);
+            }
+
+            .buttons-div {
+                .flexRow();
+                justify-content: space-between;
+                gap: 12px;
+
+                width: 100%;
+                max-width: 360px;
+
+                .button-store {
+                    padding: 0;
+                    .buttonImg();
+
+                    > img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        > img {
+            display: none;
+        }
+    }
+    .fourth-section {
+        .paddingConfig();
+
+        .subtitles {
+            .titlesCenter();
+            margin-bottom: 18px;
+        }
+        > p {
+            text-align: center;
+            margin-bottom: 40px;
+
+            .textConfigWithSizes(
+                    @text-2-mobile,
+                    400,
+                    "Inter",
+                    @dark-20,
+                    @text-3-desktop
+                );
+        }
+        .list-plans {
+            .flexColumn();
+            align-items: center;
+            gap: 40px;
+
+            list-style: none;
+
+            .plans-card {
+                .flexColumn();
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+
+                max-width: 360px;
+                height: 470px;
+
+                border-radius: 8px;
+                padding: 24px 5px;
+
+                text-align: center;
+
+                #favorite-plan {
+                    padding: 5px 32px;
+
+                    border-radius: 15px;
+
+                    color: @dark-40;
+                    background-color: @brand-color;
+
+                    font-size: @text-2-mobile;
+                    font-weight: 600;
+                    font-family: "Inter";
+                    letter-spacing: 0.175rem;
+                }
+
+                .value {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 700;
+
+                    display: flex;
+                    flex-direction: row;
+
+                    margin-bottom: 16px;
+
+                    .rs {
+                        padding-top: 10px;
+
+                        font-size: 20px;
+                    }
+
+                    .value-number {
+                        font-size: 50px;
+                    }
+                    .month {
+                        font-size: 26px;
+
+                        display: flex;
+                        align-items: flex-end;
+
+                        padding-bottom: 5px;
+                    }
+                }
+                .card-button {
+                    .buttonConfig(@brand-color,@dark-40,@radius-button, 8px 80px, @size-button-mobile, 700, "Nunito",  @size-button-desktop, 8px 80px);
+                }
+            }
+            .special-card {
+                color: @dark-40;
+                background-color: @dark-10;
+
+                .card-title {
+                    .textConfig(@subtitle-2-mobile, 600, "Sora", @dark-40);
+                }
+
+                .value {
+                    color: @dark-40;
+                }
+
+                .card-description {
+                    .textConfigWithSizes(@subtitle-3-mobile, 400, "Inter", @dark-30, @subtitle-3-desktop);
+                }
+            }
+            .normal-card {
+                background-color: @light-blue-bg;
+                .card-title {
+                    .textConfig(@subtitle-2-mobile, 600, "Sora", @dark-10);
+                }
+                .value {
+                    color: @dark-10;
+                }
+                .card-description {
+                    .textConfigWithSizes(@subtitle-3-mobile, 400, "Inter", @dark-20, @subtitle-3-desktop);
+                }
+            }
+        }
+    }
+    .fifth-section {
+        .paddingConfig();
+
+        background: url(https://raw.githubusercontent.com/isgabriel/rachi-lp__frontend/b0f5647ba42ed988f94044716212a39e614ec3ff/src/assets/secao-5-img.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .flexColumn();
+        gap: 5px;
+        > h2 {
+            .titlesCenter();
+            color: @dark-40;
+        }
+        > p {
+            .textConfig(@text-2-desktop, 400, "Inter", @dark-30);
+            text-align: center;
+        }
+        > form {
+            .flexColumn();
+            gap: 46px;
+
+            > input {
+                color: @dark-40;
+
+                margin-top: 20px;
+
+                border: none;
+                border-bottom: 1px solid @dark-40;
+
+                background-color: transparent;
+                padding-bottom: 10px;
+
+                &::placeholder {
+                    .textConfig(@text-2-desktop, 500, "Inter", @dark-40);
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            > button {
+                width: 100%;
+
+                background-color: @brand-color;
+                color: @dark-40;
+
+                padding: 8px 0;
+
+                font-size: @text-3-desktop;
+                font-family: "Nunito", sans-serif;
+                font-weight: 700;
+
+                border-radius: 50px;
+                border: none;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        .first-section {
+            .flexRow();
+            align-items: center;
+            justify-content: space-between;
+
+            .div-first-section {
+                width: 45%;
+
+                .title {
+                    padding: 0;
+                }
+
+                .button {
+                    max-width: 200px;
+                }
+            }
+
+            .image-first-section {
+                display: block;
+                width: 45%;
+                max-width: 450px;
+            }
+        }
+        .second-section {
+            .list-funcionalities {
+                .flexRow();
+                justify-content: center;
+                gap: 5%;
+
+                margin-top: 80px;
+            }
+        }
+        .third-section {
+            .blueSectionConfig();
+
+            .div-content-third-section {
+                align-items: flex-start;
+                min-width: 50%;
+
+                .subtitles {
+                    text-align: left;
+                }
+
+                > p {
+                    max-width: 450px;
+                }
+
+                .buttons-div {
+                    margin-top: 12px;
+                }
+            }
+
+            > img {
+                display: block;
+                width: 45%;
+                max-width: 450px;
+            }
+        }
+        .fourth-section {
+            .list-plans {
+                .flexRow();
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+
+                > p {
+                    margin-bottom: 80px;
+                }
+                .plans-card {
+                    min-width: 300px;
+                    width: 40%;
+                }
+                .special-card {
+                    .card-button {
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+        }
+        .fifth-section {
+            align-items: center;
+            gap: 16px;
+
+            > p {
+                max-width: 520px;
+            }
+
+            > form {
+                width: 420px;
+
+                margin-top: 74px;
+
+                .flexRow();
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+
+                > input {
+                    width: 60%;
+                }
+
+                > button {
+                    width: 120px;
+                }
+            }
+        }
+    }
+}
+footer {
+    padding: 21px 0;
+    text-align: center;
+
+    .textConfigWithSizes(@footer-mobile, 400, "Sora", @dark-10, @footer-desktop);
+}
+.blue-section {
+    .paddingConfig();
+
+    max-width: 100%;
+
+    background-color: @light-blue-bg;
+}
